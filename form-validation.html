@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script	src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+	<title>Form validation - George Yanev</title>
+</head>
+<body>
+	<div class="form-wrapper">
+		<div class="half-width">
+			<h1 class="main-head">Credit / Debit Cards</h1>
+		</div>
+		<form data-toggle="validator">
+			<div class="form-group has-feedback no-err">
+				<label for="inputNumber" class="control-label">Card Number*</label>
+				<input type="text" pattern="^4[0-9]{11}$" class="form-control" id="inputNumber" required data-error="Please enter a valid Card Numer">
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div class="help-block with-errors"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 clr-pd">
+					<div class="col-sm-12 clr-pd">
+						<div class="form-group no-err">
+							<label class="control-label">Expiration Date*</label>
+							<div class="form-group">
+								<div class="form-group col-sm-6 clr-pd p-r">
+									<select class="form-control required" id="sel1" required data-error="Please enter a valid Expiration Date">
+										<option value="">MM</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group col-sm-6 clr-pd p-r">
+									<select class="form-control" id="sel2" required  data-error="Please enter a valid Expiration Date">
+										<option value="">YYYY</option>
+										<option value="2018">2018</option>
+										<option value="2019">2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+									</select>
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 clr-pd">
+					<div class="col-sm-12 form-group has-feedback">
+						<label for="inputSecurityCode" class="control-label">Security Code*</label>
+						<input type="text" id="inputSecurityCode" class="form-control" pattern="^[0-9]{3,4}$" data-minlength="3" data-error="Please enter a valid Security Code" placeholder="3 or 4 digits" required>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group has-feedback no-err">
+				<label for="inputName" class="control-label">Name on Card*</label>
+				<input type="text" pattern="^[a-zA-Z\s]*$" class="form-control" id="inputName" placeholder="Full Name" data-error="Please enter a valid Name on Card" required>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div class="help-block with-errors"></div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary" id="sub-btn">Proceed to Order Review</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
